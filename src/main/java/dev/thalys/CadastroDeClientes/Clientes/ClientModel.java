@@ -1,5 +1,6 @@
-package dev.thalys.CadastroDeClientes;
+package dev.thalys.CadastroDeClientes.Clientes;
 
+import dev.thalys.CadastroDeClientes.Planos.PlanoModel;
 import jakarta.persistence.*;
 
 @Entity
@@ -14,6 +15,9 @@ public class ClientModel {
     private String city;
     private String state;
     private int age;
+    @ManyToOne
+    @JoinColumn(name = "plano_id")
+    private PlanoModel plano;
 
     public ClientModel() {
     }
